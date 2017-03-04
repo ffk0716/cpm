@@ -30,9 +30,9 @@ if __name__ == '__main__':
     mode = ['simple', 'all']
     
     parser = argparse.ArgumentParser(
-            description='本息平均攤還法 (Constant Payment Mortgage loan, CPM)',
+            description='本息平均攤還法(Constant Payment Mortgage loan, CPM)，攤還金額試算',
             epilog="謹慎理財 信用至上")
-    parser.add_argument('mode', choices = mode, nargs='?', default = mode[0], help='模式：an integer for the accumulator')
+    parser.add_argument('mode', choices = mode, nargs='?', default = mode[0], help='simple：簡單模式，all：印出每期攤還金額')
     parser.add_argument('-p', required = True, type=float, help='本金（萬元）(principal)')
     parser.add_argument('-r', required = True, type=float, help='年利率(annual percentage rate)')
     parser.add_argument('-y', required = True, type=int,   help='貸款年數(Years of Loan)')

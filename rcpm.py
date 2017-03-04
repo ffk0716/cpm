@@ -3,7 +3,7 @@ import argparse
 import cpm
 
 parser = argparse.ArgumentParser(
-        description='本息平均攤還法 (Constant Payment Mortgage loan, CPM)',
+        description='''本息平均攤還法(Constant Payment Mortgage loan, CPM)，年利率反推''',
         epilog="謹慎理財 信用至上")
 parser.add_argument('-p', required = True, type=float, help='本金（萬元）(principal)')
 parser.add_argument('-i', required = True, type=float, help='總利息（萬元）(toal interest)')
