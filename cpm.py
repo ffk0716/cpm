@@ -7,7 +7,7 @@ def count(**args):
     class temp: pass
     r = temp()
     r.cr = (R * mr) / (R - 1)
-    r.c = round(r.cr * args['principal'])
+    r.c = r.cr * args['principal']
     r.total = r.c * N
     r.total_int = r.total - args['principal']
     return r
@@ -50,10 +50,16 @@ if __name__ == '__main__':
     table.append(['本金：', '{}萬元'.format(args.p)])
     table.append(['貸款年數：', '{}年'.format(args.y)])
     table.append(['年利率：', '{}%'.format(args.r)])
-    table.append(['每月攤還金額：', '{}元'.format(c)])
+
+    table.append(['每月攤還金額：', '{:.1f}元'.format(c)])
     total_interest = c * N - P0
-    table.append(['全部利息：', '{}元'.format(total_interest)])
+    table.append(['全部利息：', '{:.1f}元'.format(total_interest)])
     table.append(['利息本金比：', p(total_interest / P0)])
+    c = round(c)
+    table.append(['每月攤還金額(四捨五入)：', '{}元'.format(c)])
+    total_interest = c * N - P0
+    table.append(['全部利息(四捨五入)：', '{}元'.format(total_interest)])
+    table.append(['利息本金比(四捨五入)：', p(total_interest / P0)])
     print2d(table)
     
     rP = P0
